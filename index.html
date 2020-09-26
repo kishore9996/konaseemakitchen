@@ -1,0 +1,2706 @@
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
+
+<head>
+
+
+
+        <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+
+
+
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+
+
+        <link rel="stylesheet" type="text/css" href="konaseema1/assets.limetray.com/assets/themes/tanto_2/css/header.min6c6c.css?v=12345678" media="all">
+
+                    <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/css/foundation.min.css" />
+
+            <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+            <link rel="stylesheet" type="text/css" href="konaseema1/assets.limetray.com/assets/themes/tanto_2/css/main.min.css" media="all">
+
+            <link rel="stylesheet" type="text/css" href="konaseema1/assets.limetray.com/assets/themes/tanto_2/css/footer.min74b6.css?v=234234234" media="all">
+
+            <link rel="stylesheet" type="text/css" href="konaseema1/assets.limetray.com/assets/themes/tanto_2/css/tc.min.css" media="all">
+
+            <link rel="stylesheet" type="text/css" href="konaseema1/assets.limetray.com/assets/themes/tanto_2/css/animate.min.css"/> 
+
+            <link rel="stylesheet" type="text/css" href="konaseema1/assets.limetray.com/assets/themes/tanto_2/css/owl.carousel.min.css"/> 
+			<link rel="stylesheet" type="text/css" href="assets/mystyle.css"/>
+            <script src="cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+                        <style type="text/css">
+
+                .bg_color_a, .page-content
+
+            {
+
+                            background: #000000 !important ;
+
+                        }
+
+            .color_a, .menu_catg_tabs li a,.menu_catg_tabs li.active, .button, .event-tabs li.tab-title.active a, 
+
+            .gallery_catg_tabs li a, .gallery_catg_tabs li.active, .event-tabs li.tab-title a:hover
+
+            {
+
+                            color: #000000 !important;
+
+                        }
+
+
+
+            .bdr_color_a, .off-canvas-wrap, #triangle-up {
+
+                            border-color: #000000 !important;
+
+                        }
+
+                                
+
+                        
+
+    
+
+                .color_d, .review-text, .morelink, .rsvp, .event-location, .event-price, .event-date, .event-time,
+
+            .address h6, .phone-no h6, .opening-hours h6, .email-id h6, .menu-item-price, .menu-item-name, .menu-item-desc, [data-fcolor-a]
+
+            {
+
+                            color: #f4811f !important;
+
+                        }
+
+                    .font_size_3, .offer-desc p, .menu_catg_tabs li a, .gallery_catg_tabs li a, .sub-category-head > p, .menu-item-name, .menu-item-desc, 
+
+            .menu-item-price, .menu-item-scat p, .get-direction-btn, .button, .event-name, 
+
+            .rsvp, .event-location, .event-price, .event-date, .event-time, .review-rating, [data-fsize-c] 
+
+            {
+
+                font-size:15px !important;
+
+            }
+
+                                @font-face {
+
+                            font-family:"font_1";
+
+                            src: url("konaseema1/assets.limetray.com/assets/themes/tanto_2/fonts/1460465611_Diavlo_MEDIUM_II_37.otf");
+
+                        }
+
+                        .font_1, .nav-item li a, .event-name, .menu_catg_tabs li a,.gallery_catg_tabs li a, .header-mobile > ul > li > a, [data-fstyle-a] {
+
+                            font-family:font_1 !important;
+
+                            letter-spacing: 1px;
+
+                        }
+
+                                            @font-face {
+
+                            font-family:"font_2";
+
+                            src: url("konaseema1/assets.limetray.com/assets/themes/tanto_2/fonts/1460465611_Diavlo_LIGHT_II_37.otf");
+
+                        }
+
+                        .font_2, .on-hover-text, .menu-item-price, .menu-item-desc, .menu-item-catg,
+
+                        .menu-item-name, .button, .clearing-caption,
+
+                        .rsvp, .event-location, .event-price, .event-date, .event-time, [data-fstyle-b] {
+
+                            font-family:font_2 !important;
+
+                            letter-spacing: 1px;
+
+                        }
+
+                                            @font-face {
+
+                            font-family:"font_3";
+
+                            src: url("konaseema1/assets.limetray.com/assets/themes/tanto_2/fonts/1460465611_Diavlo_BOLD_II_37.otf");
+
+                        }
+
+                        .font_3,.head-bg h3, .section-head, [data-fstyle-c]{
+
+                            font-family:font_3 !important;
+
+                            letter-spacing: 1px;
+
+                        }
+
+                        </style>
+
+
+
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+
+                       
+
+                         <style type="text/css">@media(max-width:1024px)
+
+  {
+
+   h6.offer-name.color_b.font_2.font_size_2 {
+
+    color: white !important;
+
+} 
+
+  }
+
+.contact-wrapper {
+
+    display: none !important;
+
+}
+
+@media(min-width:1024px)
+
+  {
+
+   ul.locate-address {
+
+    width: 100% !important;
+
+} 
+
+  }
+
+body {  background: #000 !important;}
+
+
+
+a.button.home-order-btn:hover {
+
+    box-shadow: 0px 0px 2px white;
+
+    transform: scale(1.05,1.05);}
+
+
+
+header {
+
+    position: fixed !important;}
+
+
+
+.off-canvas-wrap {
+
+    border: 5px solid #f48120 !important;}
+
+
+
+.menu-item-desc {
+
+    color: white !important;}
+
+
+
+a.morelink.showmore {
+
+    color: white !important;
+
+  font-weight:normal;
+
+}
+
+span.review-rating, .reviewer-name {
+
+    color: #F4811F !important;
+
+}
+
+a.get-direction-btn.button {
+
+    background: #F4811F !important;
+
+    font-weight: bold !important;
+
+    font-family: font_1 !important;
+
+    padding: 8px;
+
+}
+
+.address-head.font_1.font_size_3, .contact-head h3 {
+
+    color: #F4811F !important;
+
+    font-size: 1.1rem !important;
+
+}
+
+.menu_catg_tabs.text-center {
+
+    background: #F4811F !important;
+
+    opacity: 1;
+
+}
+
+.new-footer {
+
+    border-top: solid 2px;
+
+      padding: 0px 50px !important;
+
+}
+
+.nav-item li a {
+
+    color: #F4811F !important;
+
+}
+
+
+
+section#bg-img-section {
+
+    display: none;}
+
+
+
+.static-3-home {
+
+    min-height: 100vh;}
+
+
+
+.static-3-home {
+
+    min-height: 100vh;
+
+    background-image: url(assets.limetray.com/assets/user_images/content_images/original/konaseema-bg.jpg) !important;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;}
+
+
+
+.top-btn a.button {
+
+    font-size: 1.4rem !important;}
+
+
+
+.top-btn a.button:hover {
+
+    box-shadow: 0px 0px 1px 2px rgba(255, 255, 255, 0.32);
+
+}
+
+
+
+@media(min-width:1024px)
+
+  {
+
+img#custom-logo {
+
+    position: absolute;
+
+    left: 6%;
+
+    z-index: 9999;
+
+    width: 14%;
+
+    top: -3px;
+
+}
+
+  }
+
+.static-2-home {
+
+    background: black;
+
+    padding: 50px 0px;
+
+}
+
+.fifth-section-gallery .orbit-container .orbit-slides-container img {
+
+    width: 70% !important;
+
+    border: inset 6px #F78223;
+
+}
+
+.new-footer a, .new-footer .top-text, .new-footer ul li {
+
+    color: #F4811F !important;
+
+}
+
+
+
+/*@media (min-width:1025px){
+
+section.bg-img-section {
+
+    background-attachment: fixed !important;
+
+}
+
+}*/
+
+
+
+.static-1-home {
+
+    background: black;
+
+}
+
+.fifth-section-gallery .orbit-bullets li {
+
+    background: #F4811F !important;
+
+}
+
+h3.section-head:after {
+
+    content: '';
+
+    display: block;
+
+    margin: 6px auto;
+
+    height: 2px;
+
+    width: 60%;
+
+    background: rgba(247, 130, 34, 0.73);
+
+    transition: width .5s ease, background-color .5s ease;
+
+}
+
+header {
+
+    background: black;
+
+    margin-top: 0px !important;
+
+}
+
+.nav-item li a.white-color {
+
+    color: #F4811F !important;
+
+}
+
+/* .bg-overlay-screen {    background: rgba(0, 0, 0, 0) !important;} */
+
+
+
+@media(min-width:1024px)
+
+  {
+
+    .main-logo h1.white-color.font_3 {
+
+    display: none;
+
+}
+
+/* section#bg-img-section {
+
+    height: 670px !important;
+
+} */
+
+  }
+
+/* .logo-home {    display: none;} */
+
+.home-order-btn {
+
+    margin-bottom: 0;
+
+    padding: 10px;
+
+    color: #E8811A !important;
+
+    font-size: 24px !important;
+
+    font-weight: bold;
+
+}
+
+.contact-no-home {
+
+    display: none;
+
+}
+
+.bottom #triangle-up {
+
+    display: none;
+
+}
+
+h3.section-head.color_b.font_3 {
+
+    color: #F78222 !important;
+
+}
+
+.image-div {
+
+    border: inset 6px #F78223;
+
+}
+
+.sub-category-head h4 {
+
+    color: #F4811F !important;
+
+    font-size: 16px !important;
+
+}
+
+
+
+.fifth-section .section-head {
+
+    width: 50%;
+
+    padding-top: 60px;
+
+    margin: auto;
+
+}
+
+
+
+.footer_mobile i {  color: #F4811F !important;}
+
+ul.off-canvas-list li a {     color: white !Important;}
+
+.footer_mobile {    border-top: 2px solid #F4811F !important;}
+
+
+
+section#bg-img-section-0 {
+
+    display: none;}
+
+
+
+
+
+a.button.home-order-btn {
+
+    background: #F48415 !Important;
+
+    color: white !important;
+
+}
+
+
+
+.sub-category .sub-category-head:nth-child(1) h4 {    font-size: 1.5rem !important;}
+
+.menu-item-name {  margin-bottom: 10px !important;}
+
+.menu-item-wrap {    padding: 0px 50px 20px !important;}
+
+@media (min-width: 1025px){
+
+section#bg-img-section>.bg-overlay-screen{
+
+    background: rgba(0, 0, 0, 0.93) !important;
+
+    transform: skew(53deg);
+
+  -moz-transform: skew(53deg);
+
+    margin-left: -66%;
+
+    /* height: 121% !important; */
+
+    z-index: 4 !important;
+
+}
+
+   /* .logo-home {    position: absolute;    left: 2%;    top: 50%;} */
+
+ 
+
+}
+
+
+
+
+
+@media (min-width:1200px) and (max-width:1300px){
+
+a.button.home-order-btn {  position:absolute !important;    top: 48% !important;  left: 15% !important;  }
+
+  .logo-home {    position: absolute;    left: 3% !important;    top: 56% !important;} 
+
+
+
+}
+
+
+
+
+
+@media (min-width:1350px) and (max-width:1440px){
+
+a.button.home-order-btn {  position:absolute;    top: 40%;  left: 13%;}
+
+  .logo-home {    position: absolute;    left: 2%;    top: 50%;} 
+
+  
+
+  
+
+}
+
+
+
+  @media (min-width:1500px) and (max-width:1920px){
+
+    img#custom-logo {    width: 10% !important;}
+
+    a.button.home-order-btn {  position:absolute;    top: 40%;  left: 13%;}
+
+        .logo-home {    position: absolute;    left: 4% !important;    top: 50% !important;} 
+
+        
+
+
+
+  } 
+
+.ultimate {    color: #E27316;    font-family: font_1;}
+
+.big {    font-size: 2.5rem;}
+
+.veg {    font-size: 1.5rem;}
+
+/*.logo-home img {    margin-bottom: 0.5rem !important;} */
+
+.location {    position: absolute;    background: #F48415;    font-size: 2.3rem;    color: black;}
+
+.logo-home img {
+
+    margin-bottom: 26px !important;
+
+}
+
+.ab1 p {
+
+    text-align: justify;
+
+}
+
+span.review-rating, .reviewer-name {
+
+    color: #FFFFFF !important;
+
+}
+
+
+
+
+
+    
+
+  
+
+form#contact-form {    font-family: font_2 !important;    color: #F18020 !important;}
+
+
+
+@media (max-width:740px){
+
+  .home-container p {
+
+    padding-bottom: 10px;
+
+}
+
+  .logo-home img {  max-height: 100px !important;  margin-bottom: 10px !important; max-height: 90px !important;}
+
+  .big {    font-size: 1.5rem; margin-bottom: 10px !important;}
+
+.veg {    font-size: 1rem; margin-bottom: 10px !important;}
+
+  
+
+  section#bg-img-section .bg-overlay-screen {    background: rgba(0, 0, 0, 0.6) !important;}
+
+  .off-canvas-wrap {   margin-bottom: 50px !important;}
+
+  img#custom-logo{display:none;}
+
+section#bg-img-section {
+
+    background: url("konaseema/assets/user_images/content_images/original/Mobile%2b1460725502.jpg") !important;
+
+  background-size:cover !Important;
+
+}
+
+section.bg-img-section {    background-position: center !important;}
+
+  .fifth-section-gallery {    margin-bottom: 0px !important;}
+
+.header-mobile ul li a.white-color, .header-mobile > ul > li > a {    color: #f4811f !important;}
+
+  
+
+}
+
+
+
+form#contact-form input[type="text"], input[type="email"], input[type="tel"], textarea, textarea#description {  color: #fff !Important;}
+
+.button, input[type="submit"] {  background: #F4811F !important;
+
+    font-weight: bold !important;
+
+    font-family: font_1 !important;
+
+  font-size: 1rem !Important;
+
+}
+
+
+
+h4#modalTitle {    font-family: font_1 !Important;}
+
+@media (max-width: 740px){
+
+/*.off-canvas-wrap {
+
+    padding-bottom: 150px !important;
+
+}*/
+
+  #numbersModal a {  color: #F48415 !Important;}
+
+    .phone-no a:link { color: #F48415 !Important;}
+
+  
+
+  .off-canvas-wrap {
+
+    border: 0px solid #f48120 !important;}
+
+  
+
+  header {
+
+    border-bottom: 1px solid rgba(150, 150, 150, 0.5);}
+
+  
+
+  section#bg-img-section {
+
+    display: block !important;}
+
+  
+
+  .static-3-home {
+
+    display: none;}
+
+  
+
+  .static2-head p {
+
+    padding: 0 15px;}
+
+  
+
+  .signature-box2 {
+
+    margin-top: 5px !important;
+
+    padding-top: 0px !important;}
+
+  
+
+}
+
+
+
+/*.nav-item.inline-list {
+
+    overflow: visible !important;}
+
+
+
+.nav-bar > ul.nav-item > li>a i.fa {
+
+    margin-left: 10px!important;
+
+    font-size: 1rem;}
+
+
+
+ul.drop-down-nav2 {
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 50%;
+
+    display: none;
+
+    min-width: 170px;
+
+    text-align: center;
+
+    transition: ease all 1s;
+
+    padding: 10px 5px!important;
+
+    -moz-transform: translateX(-100px);
+
+    -ms-transform: translateX(-100px);
+
+    -o-transform: translateX(-100px);
+
+    -webkit-transform: translateX(-100px);
+
+    transform: translateX(-100px);
+
+    background: linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0))!important;}
+
+
+
+.nav-bar > ul.nav-item > li:nth-child(3) {
+
+    position: relative!important;}
+
+
+
+.nav-bar > ul.nav-item > li:nth-child(3):hover ul.drop-down-nav2 {
+
+    display: block;
+
+    transition: ease all 1s;}
+
+
+
+ul.drop-down-nav2 li {
+
+    display: list-item;
+
+    list-style: none;}
+
+
+
+ul.dd-color li a {
+
+    border-bottom: 0px solid!important;}
+
+
+
+ul.dd-color li a:hover, ul.dd-color li a:active {
+
+    border-bottom: 2px solid #F4811F !important;
+
+}
+
+*/
+
+
+
+p.top-line-new {
+
+    font-family: font_1 !important;
+
+    color: #F78222;
+
+    font-size: 28px;}
+
+
+
+.gravis-logo {
+
+    position: absolute;
+
+    bottom: 2%;
+
+    right: 2%;
+
+    color: white;
+
+    width: 8%;
+
+}
+
+
+
+.gravis-logo p {
+
+    text-align: center;
+
+    font-size: 12px;
+
+    margin-top: 4%;}
+
+
+
+
+
+</style><style>
+
+form#contact-form input[type="text"], input[type="email"], input[type="tel"], textarea {  background: #F4811F !important;
+
+  font-family: font_1 !important;
+
+  font-size:15px !Important;
+
+}
+
+
+
+  
+
+  div#feedback-footer-modal form#contact-form input[type="text"], div#feedback-footer-modal form#contact-form input[type="email"], div#feedback-footer-modal form#contact-form input[type="tel"], div#feedback-footer-modal textarea {
+
+    background: rgba(226, 220, 220, 0.82) !important; 
+
+    font-family: font_1 !important;
+
+    color: #000 !important;
+
+    font-size: 15px !Important;
+
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<script src="assets.limetray.com/assets/user_images/content_images/original/smoothscroll.js"></script><script>
+
+                        var site_root_path = 'index.html';
+
+                        var ajax_root_path = 'include/ajax/index.html';
+
+                    </script>
+
+                            <meta name="description" content=/><meta property="og:description" content="/><meta name="keywords" content=""/><link rel="canonical" href="index.html" /><meta property="og:url" content=""/><title> Konaseema| Andhra special  </title><meta property="og:title" content=""/><meta property="og:image" content=""/><link rel="shortcut icon" href=""><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="generator" content="" /><meta name="device" content="computer" />
+
+</head>
+
+
+
+<body>
+
+    <div class="off-canvas-wrap" data-offcanvas>
+
+        <div class="inner-wrap">
+
+            <header class="">
+
+
+
+                <div class="header-wrapper">
+
+
+
+                    <!----------***MAIN - LOGO***---------->
+
+                    <div class = "main-logo large-3 columns">
+
+                        <a href="index.html" class="company-name"><h1 class="white-color font_3"> Konaseema</h1></a>
+
+                    </div>
+
+                    <!----------***MAIN - LOGO - ENDS***---------->
+
+
+
+                    <!-----***nav bar***---->
+
+                    <div class="nav-bar large-9 columns">
+
+                        <ul class="nav-item inline-list right">
+
+                                                                    <li class=" nav-item-active "><a href="index.html" class="white-color">Home</a></li>
+
+
+
+                                                                                <!--<li class=""><a href="#." class="white-color">About Us</a></li>-->
+
+
+
+                                                                                <li class=""><a href="menu.html" class="white-color">Menu</a></li>
+
+
+
+                                                                                 <li class=""><a href="catering.html" class="white-color">Catering Menu</a></li>
+
+
+
+                                                                                
+
+
+
+                                                                               
+
+
+
+                                                                                <li class=""><a href="contact.html" class="white-color">Contact Us</a></li>
+
+
+
+                                                                                
+
+
+
+                                                                                <!--<li class=""><a href="#." class="white-color">Order Now </a></li>-->
+
+
+
+                                                                </ul>
+
+                    </div>
+
+                    <!-------***nav bar ends***------>
+
+
+
+                </div>
+
+
+<!-- pop up image 
+ -->
+
+ <div id="thover"></div>
+ 
+  <div id="tpopup">
+    <img src="assets/popup.jpg"> 
+ 
+    <div id="tclose">X</div>    
+  </div>
+<!-- closed pop up image -->
+
+
+
+
+
+                <div class="header-mobile">
+
+                    <ul id="menu-dropdown" class="inline-list">
+
+                        <li class="menu-btn"><a class="left-off-canvas-toggle white-color"><i class="fa fa-2x fa-reorder"></i></a></li>
+
+                        <li class="small-10 text-center"><a href="index.html" class="company-name white-color">Konaseema</a></li>
+
+                    </ul>
+
+                    <!--                        <ul class="inline-list right">
+
+                                                                                        <li class=""><a class="white-color" href=" ">Order Online</a></li>
+
+                                                                                    </ul>-->
+
+                </div>
+
+
+
+            </header>
+
+
+
+
+
+            <aside class="left-off-canvas-menu bg_color_b">
+
+                <ul id="" class="off-canvas-list">
+
+
+
+                    <li class="text-center">
+
+                        <a href="index.html">
+
+                            <!-- <img src="../konaseema1/assets.limetray.com/assets/user_images/logos/original/1470129808_Logo1.png"/> -->
+
+                        </a>
+
+                    </li>
+
+                                                    <li><a class="color_a font_2" href="index.html">Home</a></li>
+
+
+
+                                                                <!--<li><a class="color_a font_2" href="#.">About Us</a></li>-->
+
+
+
+                                                                <li><a class="color_a font_2" href="menu.html">Menu</a></li>
+
+                                                                  <li><a class="color_a font_2" href="catering.html">Catering Menu</a></li>
+
+                                                                
+
+                                                                
+
+
+
+                                                                
+
+
+
+                                                                <li><a class="color_a font_2" href="contact.html">Contact Us</a></li>
+
+
+
+                                                                
+
+
+
+                                                                <!--<li><a class="color_a font_2" href="#.">Order Now</a></li>-->
+
+
+
+                                                    <li>
+
+                        <ul class="social-icons">
+
+                                                                <li>
+
+                                        <a class="color_a" href=" " target="_blank">
+
+                                                        <!--                                            <img src="konaseema1/assets.limetray.com/assets/themes/tanto_2/images/facebook42.png"/>-->
+
+                                                <i class="fa fa-lg fa-facebook"></i>
+
+                                             
+
+                                        </a>   
+
+                                    </li>
+
+                                                                        <li>
+
+                                        <a class="color_a" href=" " target="_blank">
+
+                                                                        <!--<img src="konaseema1/assets.limetray.com/assets/themes/tanto_2/images/twitter42.png"/>-->
+
+                                                <i class="fa fa-lg fa-twitter"></i>
+
+                                             
+
+                                        </a>   
+
+                                    </li>
+
+                                    
+
+                        </ul>
+
+                    </li>
+
+                    <li style="height:100px;"></li>
+
+                </ul>
+
+            </aside>
+
+            <!-- <a class="exit-off-canvas"></a> -->
+
+
+
+
+
+
+
+            <style>
+
+                .page-bg 
+
+                {
+
+                                    }
+
+
+
+                .bg-overlay-screen {
+
+                    background: rgba(0,0,0,0.0);
+
+                }
+
+            </style>
+
+
+
+                            <style>
+
+                    .head-bg {
+
+                        display: block;
+
+                    }
+
+                </style>
+
+                
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="konaseema1/assets.limetray.com/assets/themes/tanto_2/css/home.min.css" media="all">
+
+
+
+<!--container-->
+
+<section id="bg-img-section" class="introduction section-home" style="background: url('');">
+
+
+
+    
+
+
+
+    <div class="bg-slider">
+
+        <ul class="slider-container" data-orbit>
+
+            
+
+                                <li class="orbit-item slider-1">
+
+                                            <div class="orbit-caption bg_color_b color_a">
+
+                                                     </div>
+
+                    
+
+
+
+
+
+
+
+                    <style>
+
+                        .slider-1                        {
+
+                            background: url(assets/Swagath.jpg) center;
+
+                            background-repeat: no-repeat;
+
+                            background-size: cover;
+
+                        }
+
+                        .bg-slider .orbit-container{
+
+                            height:100%;
+
+                        }
+
+                    </style>
+
+
+
+
+
+
+
+                </li>
+
+                
+
+                
+
+                                <li class="orbit-item slider-2">
+
+                                            <div class="orbit-caption bg_color_b color_a">
+
+                                                     </div>
+
+                    
+
+
+
+
+
+
+
+                    <style>
+
+                        .slider-2                        {
+
+                            background: url(assets/southindian.jpg) center;
+
+                            background-repeat: no-repeat;
+
+                            background-size: cover;
+
+                        }
+
+                        .bg-slider .orbit-container{
+
+                            height:100%;
+
+                        }
+
+                    </style>
+
+
+
+
+
+
+
+                </li>
+
+                
+
+                
+
+                                <li class="orbit-item slider-3">
+
+                                            <div class="orbit-caption bg_color_b color_a">
+
+                                                     </div>
+
+                    
+
+
+
+
+
+
+
+                    <style>
+
+                        .slider-3                        {
+
+                            background: url(assets/download.jpg) center;
+
+                            background-repeat: no-repeat;
+
+                            background-size: cover;
+
+                        }
+
+                        .bg-slider .orbit-container{
+
+                            height:100%;
+
+                        }
+
+                    </style>
+
+
+
+
+
+
+
+                </li>
+
+                
+
+                
+
+                                <li class="orbit-item slider-4">
+
+                                            <div class="orbit-caption bg_color_b color_a">
+
+                                                     </div>
+
+                    
+
+
+
+
+
+
+
+                    <style>
+
+                        .slider-4                        {
+
+                            background: url(assets/south-indian-foods.jpg) center;
+
+                            background-repeat: no-repeat;
+
+                            background-size: cover;
+
+                        }
+
+                        .bg-slider .orbit-container{
+
+                            height:100%;
+
+                        }
+
+                    </style>
+
+
+
+
+
+
+
+                </li>
+
+                
+
+                
+
+        </ul>
+
+
+
+                    <script>
+
+                $(document).ready(function () {
+
+                    $(document).foundation({
+
+                        orbit: {
+
+                            animation: 'fade',
+
+                            timer_speed: 5000,
+
+                            pause_on_hover: false,
+
+                            animation_speed: 1000,
+
+                            navigation_arrows: false,
+
+                            slider_number: false,
+
+                            bullets: true,
+
+                            slide_number: false,
+
+                            swipe: true,
+
+                            autoplay: true
+
+                        }
+
+                    });
+
+                    var x = screen.height;
+
+                    $(".orbit-item,.slider-container").css({"height": x});
+
+                });
+
+            </script>
+
+            </div>
+
+
+
+    
+
+
+
+
+
+    <div class="bg-overlay-screen"></div>
+
+    <div class="text-on-image">
+
+        <div class="intro-caption">
+
+            <div class="home-text-heading font_1"></div>
+
+            <!-- <div class="logo-home"><img src="konaseema1/assets.limetray.com/assets/user_images/logos/original/1470129808_Logo1.png"/></div> -->
+
+                            <style>
+
+                    .contact-no-home-mobile {
+
+                        color: #fff;
+
+                        font-size: 14px;
+
+                        margin-top: 5px;
+
+                        text-shadow: 0px 1px 2px #333;
+
+                        display: none;
+
+                    }
+
+                    .contact-no-home-mobile a {
+
+                        color: #fff;
+
+                    }
+
+                    .contact-no-home-mobile i.fa {
+
+                        vertical-align: -20%;
+
+                        margin-left: 7px;
+
+                    }
+
+                    @media (max-width:1024px) {
+
+                        .contact-no-home {
+
+                            display: none;
+
+                        }
+
+                        .contact-no-home-mobile {
+
+                            display: block;
+
+                        }
+
+                    }
+
+                </style>
+
+				
+
+                <a class="button home-order-btn" href="menu.html">Order Now</a>
+
+                                <div class="contact-no-home font_2">or Call at </div>
+
+                <div class="contact-no-home-mobile font_2">or <i class="fa fa-phone fa-lg"></i>
+
+                                            
+
+                            <a href="tel:+1 5105092982">+1 510-509-2982 </a>
+
+                        
+
+                                    </div>
+
+               
+
+                    </div>
+
+    </div>
+
+    <div class="bottom"><div id="triangle-up" class=""></div></div>
+
+
+
+    
+
+<style>
+
+@font-face{
+
+    src : url('');
+
+    font-family : 'secondaryFont';
+
+}
+
+
+
+        .bottom #triangle-up {
+
+            cursor: pointer;
+
+        }
+
+
+
+        .offer-close-btn {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 15px;
+
+            cursor:pointer;
+
+        }
+
+
+
+        .widget-cta-btn .button{
+
+            background :  !important;
+
+            color : #fff !important;
+
+            font-family : 'secondaryFont' !important;
+
+            box-shadow: none !important;
+
+            padding: 15px 30px;
+
+            border-radius: 3px;
+
+            margin-bottom : 0;
+
+        }
+
+
+
+        .widget-desc{
+
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+
+            font-size: 13px;
+
+        }
+
+
+
+        .widget-title{
+
+            font-family: 'secondaryFont';
+
+            font-size : 16px;
+
+        }
+
+
+
+        .widget-container{
+
+            padding : 15px 30px 10px !important;
+
+            width: 45%;
+
+             margin-left: 28%;
+
+             position:absolute;
+
+             bottom:8px !important;
+
+             z-index:99 !important;
+
+             background:#fff;
+
+             border-radius: 4px;
+
+            box-shadow: 0 0 10px 0 #2525252b !important;
+
+        }
+
+
+
+        .widget-container li{
+
+            list-style-type:none;
+
+        }
+
+
+
+        .widget-offer-slider{
+
+            text-align : left;
+
+        }
+
+
+
+        .widget-offer-slider .widget-cta-btn{
+
+            text-align: right;
+
+        }
+
+
+
+        .widget-offer-slider .orbit-bullets{
+
+            margin : 0 auto 10px auto !important;
+
+        }
+
+
+
+        .widget-offer-slider .offer-wrapper{
+
+            min-height:116px !important;
+
+        }
+
+
+
+        .widget-desc{
+
+            padding:15px 0;
+
+        }
+
+
+
+        @media (max-width:740px){
+
+            .widget-container{
+
+                    width: 85%;
+
+                    margin-left: 7%;
+
+            }
+
+        }
+
+</style></section>
+
+
+
+        <!-- Static 1 Container -->
+
+        <!-- ********************************************* START ************************************************* -->
+
+        <div class="static-3-home">
+
+            <div class="row">
+
+			
+
+			
+
+                <div class="gal-head home-section-head">
+
+                    <div id="slider-k">
+
+<div class="frame-k"><img alt="" src="assets.limetray.com/assets/user_images/content_images/original/konaseema-k4.jpg" /></div>
+
+
+
+<div class="frame-k"><img alt="" src="assets.limetray.com/assets/user_images/content_images/original/konaseema-new.jpg" /></div>
+
+
+
+<div class="frame-k"><img alt="" src="assets.limetray.com/assets/user_images/content_images/original/konaseema-new-pic16.jpg" /></div>
+
+
+
+<div class="frame-k"><img alt="" src="assets.limetray.com/assets/user_images/content_images/original/konaseema-ss1.jpg" />
+
+</div>
+
+
+
+  
+
+</div>
+
+
+
+<div class="top-btn text-center"><a class="button" href="menu.html">Order Now</a></div>
+
+
+
+
+
+ 
+
+
+
+<style type="text/css">#slider-k { background-image: url(assets.limetray.com/assets/user_images/content_images/original/konaseema-new-pic17.jpg)!important;     background-repeat: no-repeat!important;
+
+    background-size: cover!important; width: 90%; height: 74vh; margin: 12vh auto 4vh; overflow: hidden; border-radius: .5rem; box-shadow: 0 0 7px rgba(0, 0, 0, 0.7); } 
+
+#slider-k .frame-k { -moz-box-sizing: border-box; box-sizing: border-box; width: 25%; height: 100%; float: left; overflow: hidden; border-left: 10px solid #f48120; pointer: cursor; box-shadow: 0 0 7px rgba(0, 0, 0, 0.9); transform: skewX(-20deg); transition: width 1.2s ease-in-out; } 
+
+#slider-k:hover div {width: 17%;cursor: default;} 
+
+#slider-k:hover div:hover { width: 60%;} 
+
+.frame-k img { margin-left: -10rem; max-width:100rem !important; width:67rem; transform: skewX(20deg); } 
+
+#slider-k > div:first-child {margin-left: -6rem;} 
+
+#slider-k > div:last-child {margin-right: -6rem; border-right: 10px solid #f48120;}
+
+
+
+@media(min-width:1650px){
+
+#slider-k {
+
+width: 100%;
+
+    height: 66vh;}
+
+</style>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+                    <section id="bg-img-section-0" class="section-home bg-img-section" style="background: url('konaseema1/assets.limetray.com/assets/user_images/content_images/cropped/best-of-konaseema.jpg');">
+
+                <div class="bg-overlay-screen"></div>
+
+                <div class="bg-image-caption text-center">
+
+                                    </div>
+
+            </section>
+
+            
+
+        
+
+        <!-- Static 1 Container -->
+
+        <!-- ********************************************* START ************************************************* -->
+
+		<div class="">
+
+		<marquee style="">
+
+		<h1><font face="monotype corsiva" color="red"><b>Only phone orders are available as of now...</b></font></h1>
+
+		
+
+		</marquee>
+
+		
+
+		</div>
+
+         <div class="static-1-home">
+
+            <div class="row">
+
+                <div class="gal-head home-section-head">
+
+                    <style type="text/css">.static-1-home {
+
+    padding-top: 30px;
+
+    padding-bottom:30px;
+
+}
+
+.offers-home p, .offers-home2 p {
+
+    text-align: center;
+
+    color: white;
+
+    padding-bottom: 20px;
+
+    font-family: font_1;
+
+    font-size: 14px;
+
+}
+
+.offers-home img, .offers-home2 img
+
+{
+
+width:60% !important;
+
+}
+
+.offers-home h1, .offers-home2 h1 {
+
+    font-family: cursive;
+
+    color: #F78222;
+
+    font-size: 2rem;
+
+    text-align:center;  
+	
+	margin: 25px;
+	
+	<!-- margin-bottom: 1rem; -->
+
+}
+
+.offers-home p, .offers-home2 p {    display: none;}
+
+</style>
+
+<div class="offers-home large-6 small-12 text-center columns" style="margin-bottom: 1rem;">
+
+<h1> WoW Weekdays</h1>
+
+
+
+<p></p>
+
+<span style="color: #ccbab7; font-family:Roboto; font-size:1.2rem">We offer <span style="color: #cf0">Lunch Buffet</span>  <br>From Tuesday to Sunday 
+
+</span>
+
+</div>
+
+<div class="offers-home2 large-6 small-12 text-center columns" style="margin-bottom: 1rem;">
+
+<h1>WoW Weekends </h1>
+
+
+
+<p></p>
+
+<span style="color: #ccbab7; font-family:Roboto; font-size:1.2rem">
+
+Now serving <span style="color: #cf0">Unlimited Breakfast</span> on Friday, <br>
+
+Saturday and Sunday from<br>
+
+7AM to 10AM for just $9.99<br>
+
+Lunch Buffet from 11.30 AM to 2.30 PM for just $11.99 
+
+</span>
+
+</div>
+
+
+
+<div class="offers-home2 large-6 small-12 text-center columns" style="margin-bottom: 1rem;">
+
+<h1>Konaseema Special</h1>
+
+
+
+<p></p>
+
+<span style="color: #ccbab7; font-family:Roboto; font-size:1.2rem">
+
+
+
+Mid-Night Biryani<br>
+
+On Every Friday and Saturday<br>
+
+10.00 PM to 2.00 AM
+
+</span>
+
+</div>
+
+
+<div class="offers-home2 large-6 small-12 text-center columns" style="margin-bottom: 1rem;">
+
+<h1>Konaseema Kitchens Special Onsite Dosa Catering Package</h1>
+
+
+
+<p></p>
+
+<span style="color: #ccbab7; font-family:Roboto; font-size:1.2rem">
+
+1. One Welcome Drink <br>
+
+2. Two Veg Appetizers<br>
+
+3. Six Varieties of Dosa<br>
+
+4. One Desert<br>
+
+15$ per person (Minimum Order of 50 persons)
+
+</span>
+
+</div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+		
+		
+
+<!-- <div style="color:red">
+
+
+
+&nbsp;
+
+
+
+ <p style="padding:40px;font-size: 20px;text-align: center;">Due to very high volume of orders, we are unable to process the full menu. For now, we are having only Biryanis, 1 Veg and Non-Veg Appetizer with house special Junnu(flan) Appetizer for this weekend. Sorry for the inconvineince. We will back with full menu from the next Monday - Team Konaseema Kitchen
+
+</p>
+
+<p style="padding:40px;font-size: 30px;text-align: center;"> Lunch buffet available on Friday,Saturday and Sunday </p>
+
+</div> 
+
+<p style="padding:40px;font-size: 20px;text-align: center;">We offer Lunch Buffet  <br><span class="">( monday to thursday ) - $ 10:99</span>
+
+<br>  <span class="blink">( Friday to Sunday ) - $ 10:99</span>
+
+</p>
+
+-->
+
+
+
+ 
+
+ 
+
+                    <section id="bg-img-section-1" class="section-home bg-img-section" style="background: url('konaseema1/assets.limetray.com/assets/user_images/content_images/cropped/konaseema-pulli.jpg');">
+
+                <div class="bg-overlay-screen"></div>
+
+                <div class="bg-image-caption text-center">
+
+                                    </div>
+
+            </section>
+
+            
+
+        
+
+        <!-- Static 1 Container -->
+
+        <!-- ********************************************* START ************************************************* -->
+
+		
+
+        <div class="static-2-home">
+
+            <div class="row">
+
+                <div class="gal-head home-section-head">
+
+                    <style type="text/css">.static2-head h1 {
+
+    color: #EF8224;
+
+font-family:font_1;
+
+}
+
+.home-container h2 {
+
+    font-size: 20px;
+
+}
+
+.static2-head p {
+
+    color: white;
+
+    font-family: font_2;
+
+    font-size: 15px;
+
+    font-weight: normal !important;
+
+    letter-spacing: 2px !important;
+
+}
+
+.home-container p {
+
+    display: none;
+
+    color: white !important;
+
+    text-align: left !important;
+
+    font-size: 12px;
+
+}
+
+.static2-head p
+
+{
+
+color:white;
+
+font-family:font_2;
+
+}
+
+</style>
+
+<div class="static2-head text-center">
+
+
+
+&nbsp;
+
+
+
+<p>We serve the best & authentic food in town. Check out our spicy curries, delicious biriyanis and our awesome fries. We are sure you will come back for more.
+
+</p>
+
+<p>For piping hot Andhra food call us to get it delivered at your door step. Check out our entire range of Menu to place your order.
+
+</p>
+
+</div>
+
+
+
+<div class="home-container column" data-equalizer="" style="margin-top:25px;background:transparent;padding-top:35px;">
+
+<div class="row text-center">
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html"><img alt="LimeTray.com" src="assets.limetray.com/assets/user_images/content_images/original/konaseema-tindi.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;"> Breakfast </h2></a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">Galouti Kebab, which finds its roots in Lucknow, exemplifies the &ldquo;melting in the mouth&rdquo; experience for a diner. The vegetable version replicates the tenderness and subtly of its non-veg counterpart in a dish that is a wonderful start to a meal.</p>
+
+</div>
+
+
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html"><img alt="LimeTray.com" src="konaseema/assets/user_images/content_images/original/1462856696_885925771_Paneer_Tikka.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;">Soups</h2></a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">Soft succulent pieces of cottage cheese are marinated in pickled spices and grilled in a tandoor to give tikkas that are juicy and delicious.</p>
+
+</div>
+
+
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html"><img alt="LimeTray.com" src="konaseema/assets/user_images/content_images/original/1462856714_637419542_Aloo_Tuk_Chat.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;">Vegetarian Appetizer</h2></a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">Tangy, salty, sweet and spicy, the delectable Warm Aloo Tuk Chat is a m&eacute;lange of flavors that activates all your taste buds.</p>
+
+</div>
+
+
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html"><img alt="LimeTray.com" src="konaseema/assets/user_images/content_images/original/1462858828_1384599795_Butter_Chicken.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;"> Non-Vegetarian Appetizer </h2></a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">There are butter chickens and there are butter chickens. &rsquo;s is the latter. Generous doses of butter, stirred into a tomato, sweet-spicy gravy with a touch of  uniqueness, make this a very popular dish.</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="home-container column signature-box2" data-equalizer="" style="margin-top:25px;background:transparent;padding-top:35px;">
+
+<div class="row text-center">
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html"><img alt="LimeTray.com" src="konaseema/assets/user_images/content_images/original/1462858808_1270892381_Gosht_Seekh_Kebab.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;">Bread / Tandoori</h2></a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">Minced mutton blended with hints of aromatic spices and herbs, when grilled in a tandoor, create a perfectly beautiful kebab.</p>
+
+</div>
+
+
+
+
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html" ><img alt="LimeTray.com" src="konaseema/assets/user_images/content_images/original/1462858895_604973752_Biryani.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;">Biryani / Rice Entries</h2>
+
+</a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">Few things are as wholesome as a helping of Murg Biryani. Hints of saffron mixed with clove and cinnamon emanate from a piping hot bowl of Murg Biryani as tender, well-flavoured chunks of chicken</p>
+
+</div>
+
+
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html"><img alt="LimeTray.com" src="konaseema/assets/user_images/content_images/original/1462858913_1098181304_Phirni.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;"> Vegetarian Entries </h2></a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">Rich, creamy Phirni is a fitting finish to a fantastic food trail at our Restaurant.</p>
+
+</div>
+
+
+
+<div class="column medium-3 large-3" data-equalizer-watch=""><a href="menu.html"><img alt="LimeTray.com" src="konaseema/assets/user_images/content_images/original/rasmalai.jpg" />
+
+<h2 data-fcolor-a="" data-fsize-b="" data-fstyle-a="" style="padding-top: 10px;margin-bottom: 5px;">Desserts</h2></a>
+
+
+
+<p class="text-justify" data-fcolor-a="" data-fsize-c="" data-fstyle-b="">Tiny cottage cheese balls soaking in the essence of saffron, dried fruits and herbs are a burst of flavours.</p>
+
+</div>
+
+</div>
+
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+
+        var x = $(window).height();
+
+        $(".introduction").css("height", x - 40);
+
+
+
+        $(window).scroll(function () {
+
+            if ($(this).scrollTop() > x - 90) {
+
+                $('header').addClass('bg_color_a');
+
+                $('.main-logo h1, .nav-item li a, .header-mobile ul li a').removeClass('white-color');
+
+                $('header').css('box-shadow', '0px 0px 1px 0px #777');
+
+            }
+
+            else {
+
+                $('header').removeClass('bg_color_a');
+
+                $('.main-logo h1, .nav-item li a, .header-mobile ul li a').addClass('white-color');
+
+                $('header').css('box-shadow', 'none');
+
+            }
+
+        });
+
+
+
+    });
+
+</script>
+
+
+
+<!--container ends-->
+
+
+
+<!--
+
+<div class="towards-top">
+
+    <a href="#" class="scroll">
+
+        <i class=" fa fa-chevron-up fa-2x bg_color_a color_b"></i>
+
+    </a>
+
+</div>-->
+
+
+
+<!-- New footer design concept starts -->
+
+<style>
+
+.new-footer{
+
+    padding:20px 50px;
+
+}
+
+.new-footer ul li{
+
+    padding:4px 2px;
+
+}
+
+.new-footer ul.no-bullet li a{
+
+    padding:2px 2px;
+
+    color: inherit;
+
+}
+
+.new-footer .top-text{
+
+    padding: 10px 0px;
+
+}
+
+.new-footer select, .new-footer select{
+
+    max-width: 80%;
+
+}
+
+.new-footer select, .new-footer select option{
+
+    font-size: 1rem;
+
+}
+
+.new-footer ul.we-are-social > li{
+
+    margin-left: 0px;
+
+    border: 1px solid #fff;
+
+    border-radius: 4px;
+
+    margin: 2px 6px;
+
+}
+
+.new-footer ul.we-are-social > li:first-child{
+
+    margin-left: 0px;
+
+}
+
+.new-footer ul.we-are-social li a{
+
+    padding:6px 8px;
+
+}
+
+.new-footer button.feedback-btn{
+
+    font-size: 1.5rem;
+
+    padding: 10px 10px;
+
+    margin-top: 20px;
+
+    outline: 1px solid;
+
+}
+
+.reveal-modal-bg {
+
+position: fixed !important;
+
+}
+
+#feedback-footer-modal.reveal-modal{
+
+    top: 6.25rem !important;
+
+    position: fixed;
+
+}
+
+</style>
+
+<footer class="new-footer clearfix show-for-medium-up">
+
+    <div class="columns medium-3 small-12">
+
+        <h5 class="top-text color_a font_1">Quick Links</h5>
+
+        <ul class="no-bullet">
+
+                                    <li><a class="color_a font_1 font_size_2" href="index.html">Home</a></li>
+
+                                    <li><a class="color_a font_1 font_size_2" href="menu.html">Menu</a></li>
+
+                                        <li><a class="color_a font_1 font_size_2" href="contact.html">Contact Us</a></li>
+
+                                        
+
+                        </ul>
+
+    </div>
+
+    <div class="columns medium-5 small-12">
+
+        <h5 class="top-text color_a font_1">LOCATION</h5>
+
+        <ul class="no-bullet">
+
+                            
+
+            <li class='locationsM color_a font_1 font_size_2 hide' data-location='0'>39158 paseo padre pkwy, Fremont<br>CA<br>94538<br><br/></li>        </ul>
+
+        <script>
+
+            $('.locationsM').first().removeClass("hide");
+
+            function locationChanged(value)
+
+            {
+
+                $('.locationsM').addClass("hide");
+
+                $('.locationsM[data-location="'+value+'"]').fadeIn(600).removeClass("hide");
+
+            }
+
+        </script>
+
+    </div>
+
+    <div class="columns medium-4 small-12">
+
+                <h5 class="top-text color_a font_1">WE ARE SOCIAL</h5>
+
+        <ul class="no-bullet inline-list we-are-social">
+
+                                        <li>
+
+                                    <a class="color_a" href="https://www.facebook.com/KonaseemaKitchens/" >
+
+                                                       
+
+                                            <i class="fa fa-lg fa-facebook"></i>
+
+                                         
+
+                                    </a>   
+
+                                </li>
+
+                                                                <li>
+
+                                    <a class="color_a" href="#." >
+
+                                                               
+
+                                            <i class="fa fa-lg fa-twitter"></i>
+
+                                         
+
+                                    </a>   
+
+                                </li>
+
+                                
+
+                    </ul>
+
+                    <!-- google plus follow button -->
+
+                                        <!-- google plus follow button ends -->
+
+
+
+                                                            
+
+                                   
+
+    </div>
+
+        
+
+   
+
+</footer>
+
+
+
+<!-- New footer design concept ends -->
+
+<!-- payment partners footer -->
+
+
+
+<!-- payment partners ends -->
+
+<a class="exit-off-canvas"></a>
+
+</div>
+
+</div>
+
+
+
+
+
+<footer class="footer_mobile hide-for-medium hide-for-large-up bg_color_a">
+
+    <ul class="small-block-grid-3">
+
+        <li class="color_b text-left">
+
+            <a href="tel:+1 510-509-2982"><i class="fa fa-phone color_b"></i></a><i class="fa fa-phone font-color-a"></i> 
+
+			</li>
+
+        <li class="font-color-a text-center"><a href="#." id="mobile_location_href">
+
+			<i class="fa fa-map-marker color_b"></i></a></li>
+
+                <li class="font-color-a text-right"><a href="#."><i class="fa fa-shopping-cart color_b"></i></a></li>
+
+            </ul>
+
+</footer>
+
+
+
+    <script type="text/javascript" src="cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/js/foundation.min.js"></script>
+
+    <script type="text/javascript" src="cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function() {
+
+        $(".towards-top a").click(function(event) {
+
+            event.preventDefault();
+
+            $('html,body').animate({
+
+                scrollTop: 0
+
+            }, 1000);
+
+        });
+
+        $('.left-off-canvas-toggle').click(function() {
+
+            $('html,body').animate({
+
+                scrollTop: 0
+
+            }, 0);
+
+        });
+
+
+
+        var x = $(window).height() - $('.page-bg').height();
+
+        $('.page-content').css("min-height", x);
+
+
+
+        $(window).scroll(function() {
+
+            if ($(this).scrollTop() > 500) {
+
+                $(".towards-top").fadeIn();
+
+            }
+
+            else {
+
+                $(".towards-top").fadeOut();
+
+            }
+
+        });
+
+
+
+        $(window).scroll(function() {
+
+            if ($(this).scrollTop() > 0) {
+
+                $("header").css('margin-top', '0');
+
+            }
+
+            else {
+
+                $("header").css('margin-top', '20px');
+
+            }
+
+        });
+
+
+
+//        $("section.introduction .bottom").click(function(event) {
+
+//            event.preventDefault();
+
+//            $('html,body').animate({
+
+//                scrollTop: x
+
+//            }, 1000);
+
+//        });
+
+
+
+        $(document).foundation();
+
+
+
+
+
+        $('.orbit-prev').html('<i class="fa fa-angle-left fa-3x color_b"></i>');
+
+        $('.orbit-next').html('<i class="fa fa-angle-right fa-3x color_b"></i>');
+
+
+
+    });
+
+
+
+</script>
+
+
+
+<script type="text/javascript" src="konaseema1/assets.limetray.com/assets/js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="konaseema1/assets.limetray.com/assets/js/popup.js"></script>
+<script type="text/javascript">jQuery(document).ready(function(e) { if(jQuery(".lazy").length > 0){ jQuery(".lazy").show().lazyload();} });</script><style>img.lazy{background:url("konaseema1/assets.limetray.com/assets/images/ajax-loader_4.gif"); background-position:center center; background-repeat:no-repeat;};</style><script type="text/javascript">jQuery(document).ready(function(e) {if((window.location.pathname == '/press') || (window.location.pathname == '/locate-us')||(window.location.pathname == '/feedback') || (window.location.pathname == '/home') ||(window.location.pathname == '/about-us')|| (window.location.pathname == '/reviews') || (window.location.pathname == '/menu')|| (window.location.pathname == '/gallery')|| (window.location.pathname == '/reviews')|| (window.location.pathname == 'index.html')){
+
+$(".inner-wrap").prepend('<a href="/home"><img id="custom-logo" src="assets.limetray.com/assets/image_manager/uploads/3243/newlogo.png"></a>');
+
+}
+
+if((window.location.pathname == '/menu')){
+
+  $('#custom-logo').css({'position':'absolute','width':'13%','top':'0'});   
+
+   } 
+
+
+
+
+
+
+
+$('.logo-home').append('<div class="ultimate"><p class="big"> One Meal | Many Choices </p></div>');
+
+/*$('.text-on-image').after('<div class="location">GHATKOPAR | KANDIVALI | VASHI</div>');*/
+
+$('section#bg-img-section').css('height', ($(window).height()));
+
+$('section#menu .menu-head h3').html('Fast & Fine Menu');
+
+
+
+
+
+
+
+(function(){
+
+
+
+  var parallax = document.querySelectorAll("#bg-img-section-1"),
+
+      speed = 0.5;
+
+
+
+  window.onscroll = function(){
+
+    [].slice.call(parallax).forEach(function(el,i){
+
+
+
+      var windowYOffset = window.pageYOffset,
+
+          elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
+
+
+
+      el.style.backgroundPosition = elBackgrounPos;
+
+
+
+    });
+
+  };
+
+
+
+})();});jQuery(".lazy").show().lazyload();</script><!-- Page loaded in 0.67218112945557 milliseconds (3243) -->
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"986f26ba0b","applicationID":"29951774","transactionName":"YgNQNxBXXkdZW0FbWVtJZxELGVlaXF1NHEZdFg==","queueTime":0,"applicationTime":678,"atts":"TkRTQVhNTUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
+
